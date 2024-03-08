@@ -6,7 +6,7 @@ def pascal_triangle(n):
     """Implement pascal's triangle."""
     triangle = []
 
-    for row_num in range(num_rows):
+    for row_num in range(n):
         row = [None] * (row_num + 1)
         row[0], row[-1] = 1, 1
 

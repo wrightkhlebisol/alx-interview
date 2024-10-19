@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 "0-island-perimeter"
 
+
 def island_perimeter(grid):
     """
     Calculate perimter of island
@@ -15,7 +16,6 @@ def island_perimeter(grid):
     return perimeter
 
 
-
 def check_sides(x, y, grid):
     """
     Check closed sides on given island
@@ -28,4 +28,3 @@ def check_sides(x, y, grid):
             closed_sides += 1
 
     return closed_sides
-

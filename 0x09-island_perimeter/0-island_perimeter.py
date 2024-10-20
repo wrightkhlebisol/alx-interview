@@ -8,10 +8,10 @@ def island_perimeter(grid):
     """
     perimeter = 0
 
-    for x in range(len(grid)):
-        for y in range(len(grid[x])):
-            if grid[x][y] == 1:
-                perimeter += check_sides(x, y, grid)
+    for x, row in enumerate(grid):
+        for val in row:
+            if val == 1:
+                perimeter += check_sides(x, val, grid)
 
     return perimeter
 
@@ -24,7 +24,12 @@ def check_sides(x, y, grid):
     sides = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
     for side in sides:
-        if grid[x - side[0]][y - side[1]] == 0:
-            closed_sides += 1
+        x_diff = x - side[0]
+        y_diff = y - side[1]
+
+        if len(grid) > x_diff >= 0 and len(grid) > y_diff >= 0:
+            if grid[x_diff][y_diff] == 0:
+                closed_sides += 1
+
 
     return closed_sides

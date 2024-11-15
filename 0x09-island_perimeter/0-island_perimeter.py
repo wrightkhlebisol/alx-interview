@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"0-island-perimeter"
+"""
+Module to calculate the perimeter of an island in a grid
+"""
 
 
 def island_perimeter(grid):
@@ -15,7 +17,6 @@ def island_perimeter(grid):
 
     return perimeter
 
-
 def check_sides(x, y, grid):
     """
     Check closed sides on given island
@@ -25,10 +26,10 @@ def check_sides(x, y, grid):
     for side in sides:
         x_diff = x + side[0]
         y_diff = y + side[1]
-        if x_diff < 0 or x_diff >= len(grid) or y_diff < 0 or y_diff >= len(grid[0]):
+        if (x_diff < 0 or x_diff >= len(grid) 
+            or y_diff < 0 or y_diff >= len(grid[0])):
             closed_sides += 1
         elif grid[x_diff][y_diff] == 0:
             closed_sides += 1
-
 
     return closed_sides

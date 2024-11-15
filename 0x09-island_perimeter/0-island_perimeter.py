@@ -25,9 +25,10 @@ def check_sides(x, y, grid):
     for side in sides:
         x_diff = x + side[0]
         y_diff = y + side[1]
-        if 0 <= x_diff < len(grid) and 0 <= y_diff < len(grid[0]):
-            if grid[x_diff][y_diff] == 0:
-                closed_sides += 1
+        if x_diff < 0 or x_diff >= len(grid) or y_diff < 0 or y_diff >= len(grid[0]):
+            closed_sides += 1
+        elif grid[x_diff][y_diff] == 0:
+            closed_sides += 1
 
 
     return closed_sides
